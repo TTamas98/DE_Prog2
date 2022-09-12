@@ -20,7 +20,7 @@ public class Main {
         System.out.println("\n-------------------------------\n");
 
         // Strings
-        String text = "Hello There";
+        String text = "          Hello There         ";
         String newText = new String("Hello There");
 
         System.out.println(text == newText);
@@ -29,11 +29,11 @@ public class Main {
         System.out.println(text.charAt(0));
         System.out.println(text.length());
         System.out.println(String.format("%d, %s, %c", 2, "epam", 'x')); // https://www.javatpoint.com/java-string-format
-        System.out.println(text.substring(0,5));
+        System.out.println(text.substring(0,6));
         System.out.println(text.contains("e"));
         System.out.println(String.valueOf(234));
         System.out.println(text.replace("e","a"));
-        System.out.println(text.split(" ")); // Array
+        System.out.println(text.split(" ")[0]); // Array
         System.out.println(text.indexOf("e"));
         System.out.println(text.trim());
 
@@ -59,6 +59,8 @@ public class Main {
         } else {
             System.out.println("IMPOSSIBLE");
         }
+
+        int c = (a > b) ? a : b;
 
         System.out.println("\n-------------------------------\n");
 
@@ -102,6 +104,35 @@ public class Main {
                 break;
             default:
                 System.out.println("Default");
+        }
+
+        System.out.println("\n-------------------------------\n");
+
+        String exercise1 = "First Lesson";
+
+        for(int j = 0; j < exercise1.length(); j++) {
+            System.out.printf("%d. %c\n", j+1, exercise1.charAt(j));
+        }
+
+        String exercise2 = "I love salad so much.";
+        String result2 = "";
+        for(String s: exercise2.split(" ")) {
+            if(s.contains("o")) {
+                result2 = s;
+                break;
+            }
+        }
+
+        System.out.println(result2);
+
+        int start = 0;
+        int start2 = 1;
+
+        while(start < 100) {
+            start = start + start2;
+            start2 = start + start2;
+            System.out.println(start);
+            System.out.println(start2);
         }
     }
 }
