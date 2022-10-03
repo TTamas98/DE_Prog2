@@ -44,7 +44,7 @@ public class Student {
         return weight;
     }
 
-    /*@Override
+   @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
@@ -55,5 +55,5 @@ public class Student {
     @Override
     public int hashCode() {
         return Objects.hash(name, email, phoneNumber, age, height, weight);
-    }*/
+    }
 }

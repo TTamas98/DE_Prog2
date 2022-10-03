@@ -19,7 +19,7 @@ public class ListExample {
     private final List<String> linkedListExample2 = new LinkedList<>(List.of("Hello there", "General Kenobi", "Darth Jar Jar"));
 
     public void printLinkedListExample() {
-        for(String element: linkedListExample) {
+        for(String element: linkedListExample2) {
             System.out.println(element);
         }
     }
@@ -35,6 +35,7 @@ public class ListExample {
         linkedListExample.add("General Kenobi");
         linkedListExample.add("Roger Roger");
         linkedListExample.add(null);
+        //linkedListExample = new LinkedList<>();
     }
 
     public List<String> getLinkedListExample() {
