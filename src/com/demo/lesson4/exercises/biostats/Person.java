@@ -1,4 +1,4 @@
-package com.demo.lesson4.exercises;
+package com.demo.lesson4.exercises.biostats;
 
 public class Person {
 

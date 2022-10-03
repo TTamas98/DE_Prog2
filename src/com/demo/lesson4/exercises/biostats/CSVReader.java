@@ -1,4 +1,4 @@
-package com.demo.lesson4.exercises;
+package com.demo.lesson4.exercises.biostats;
 
 import java.io.File;
 import java.io.FileNotFoundException;
