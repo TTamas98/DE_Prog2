@@ -9,6 +9,6 @@ public class ConsoleReadingMain {
         //System.out.println(consoleReading.readWithBufferedReader());
         //System.out.println(consoleReading.readWithConsoleClass());
         //System.out.println(consoleReading.readWithScanner());
-        //consoleReading.printFromArguments(args);
+        consoleReading.printFromArguments(args);
     }
 }

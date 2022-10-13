@@ -1,6 +1,10 @@
 package com.demo.lesson4.file;
 
+import com.demo.lesson5.hero.Hero;
+
 import java.io.*;
+import java.lang.reflect.MalformedParameterizedTypeException;
+import java.util.List;
 import java.util.Scanner;
 
 public class FileHandler {
@@ -11,17 +15,34 @@ public class FileHandler {
         this.file = new File(fileName);
     }
 
-    public void writeWithBufferedWriter(String toWrite) throws IOException {
-        BufferedWriter writer = new BufferedWriter(new FileWriter(file, true));
-        //writer.write(toWrite);
-        writer.append(toWrite);
-        writer.close();
+    public void writeWithBufferedWriter(String toWrite)  {
+        try(BufferedWriter writer = new BufferedWriter(new FileWriter(file, true)))  {
+            writer.append(toWrite);
+            System.out.println("I am Try");
+            throw new MalformedParameterizedTypeException("Hello there");
+        } catch (IOException e) {
+            System.out.println("I am the first catch");
+        } catch (NullPointerException e) {
+            System.out.println("I am the second catch");
+        } catch (RuntimeException e) {
+            System.out.println("I am the third catch");
+        } finally {
+            System.out.println("I am finally");
+        }
     }
 
-    public void writeWithPrintWriter(String toWrite) throws IOException {
-        PrintWriter printWriter = new PrintWriter(new FileOutputStream(file,true));
-        printWriter.println(toWrite);
-        printWriter.close();
+    public void writeWithPrintWriter(String toWrite) {
+        try (PrintWriter printWriter = new PrintWriter(new FileOutputStream(file,true))) {
+            printWriter.println(toWrite);
+        } catch (IOException e) {
+            System.out.println("I am the first catch");
+        } catch (NullPointerException e) {
+            System.out.println("I am the second catch");
+        } catch (RuntimeException e) {
+            System.out.println("I am the third catch");
+        } finally {
+            System.out.println("I am finally");
+        }
     }
 
     public void writeWithFileOutputStream(String toWrite) throws IOException {

@@ -18,10 +18,9 @@ public class CSVReader {
 
     private List<Person> readPersonsFromCSV() throws FileNotFoundException {
         List<Person> result = new ArrayList<>();
-        File file = new File("C:\\DE\\Code\\Lessons\\src\\com\\demo\\lesson4\\exercises\\biostats.csv");
+        File file = new File("C:\\DE\\Code\\Lessons\\src\\com\\demo\\lesson4\\exercises\\biostats\\biostats.csv");
         Scanner scanner = new Scanner(file);
 
-        scanner.useDelimiter("\n");
         if(scanner.hasNext()){
             scanner.nextLine();
         }
