@@ -28,17 +28,17 @@ public class ExceptionExamples {
         String input = scanner.nextLine();
         long sum = 0;
         while (!input.equals("q")) {
-            int userInput = 0;
+            int userInput;
             try {
                 userInput = Integer.parseInt(input);
                 if(userInput > 10) {
                     throw new HigherThenExpectedException();
                 }
                 sum += userInput;
-            } catch (NumberFormatException e) {
+            } catch (NumberFormatException | HigherThenExpectedException e) {
                 System.out.println(e.getMessage());
-            } catch (HigherThenExpectedException e) {
-                System.out.println(e.getMessage());
+            } catch (RuntimeException e) {
+                System.err.printf("Unexpected error with message: \n %s", e.getMessage());
             }
             finally {
                 input = scanner.nextLine();
