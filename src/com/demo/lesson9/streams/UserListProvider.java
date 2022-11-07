@@ -8,9 +8,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ServiceLoader;
 
-public class UserListProvider implements ServiceLoader.Provider<List<User>> {
+public class UserListProvider implements ServiceLoader.Provider<List<ExtendedUser>> {
 
-    private final List<User> userList = new ArrayList<>(List.of(
+    private final List<ExtendedUser> userList = new ArrayList<>(List.of(
             new ExtendedUser(1,"Apollo","Jake","Blue","test@gmail.com",23,"Oklahoma", Gender.MALE,15000L),
             new ExtendedUser(2,"Beta","Max","Green","green@gmail.com",43,"Texas", Gender.MALE,11234L),
             new ExtendedUser(3,"Mike","Michael","Red","red@gmail.com",32,"Oklahoma", Gender.MALE,6137731L),
@@ -23,12 +23,12 @@ public class UserListProvider implements ServiceLoader.Provider<List<User>> {
     ));
 
     @Override
-    public Class<? extends List<User>> type() {
+    public Class<? extends List<ExtendedUser>> type() {
         return null;
     }
 
     @Override
-    public List<User> get() {
+    public List<ExtendedUser> get() {
         return userList;
     }
 }
