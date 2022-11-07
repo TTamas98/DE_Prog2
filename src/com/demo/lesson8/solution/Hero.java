@@ -8,11 +8,19 @@ public abstract class Hero {
     private final String nickname;
     private final boolean isGood;
 
-    public Hero(String name, int age, String nickname, boolean isGood) {
+    public Hero(String name, Integer age, String nickname, boolean isGood) {
         this.name = name;
-        this.age = age;
         this.nickname = nickname;
+        this.age = this.validateAge(age);
         this.isGood = isGood;
+    }
+
+    private Integer validateAge(Integer age) {
+        if(age > 1000 || age == null) {
+            throw new IllegalArgumentException();
+        } else {
+            return age;
+        }
     }
 
     public String getName() {
