@@ -12,7 +12,7 @@ public interface SalaryService {
     Map<String, Double> calculateAverageSalaryForDepartments();
     String findTheNameOfTheDepartmentThatPaysTheMostForAdministration();
     SalaryInformation findHighestBaseSalary();
-    Map<Character, Long> getHighestSalaryForGenders();
+    Map<Character, Double> getHighestSalaryForGenders();
     String findDivisionWithHighestSalaryInCaseOfPolice();
     String findDepartmentNameWithHighestSalaryInCaseOfAdministrations();
 }

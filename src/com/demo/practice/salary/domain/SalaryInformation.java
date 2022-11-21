@@ -8,13 +8,13 @@ public class SalaryInformation {
     private String departmentName;
     private String division;
     private char gender;
-    private Long baseSalary;
-    private Integer grade;
+    private Double baseSalary;
+    private String grade;
 
     public SalaryInformation() {
     }
 
-    public SalaryInformation(String department, String departmentName, String division, char gender, Long baseSalary, Integer grade) {
+    public SalaryInformation(String department, String departmentName, String division, char gender, Double baseSalary, String grade) {
         this.department = department;
         this.departmentName = departmentName;
         this.division = division;
@@ -55,19 +55,19 @@ public class SalaryInformation {
         this.gender = gender;
     }
 
-    public Long getBaseSalary() {
+    public Double getBaseSalary() {
         return baseSalary;
     }
 
-    public void setBaseSalary(Long baseSalary) {
+    public void setBaseSalary(Double baseSalary) {
         this.baseSalary = baseSalary;
     }
 
-    public Integer getGrade() {
+    public String getGrade() {
         return grade;
     }
 
-    public void setGrade(Integer grade) {
+    public void setGrade(String grade) {
         this.grade = grade;
     }
 
