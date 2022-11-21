@@ -42,9 +42,9 @@ public class MySalaryCsvReader implements SalaryCsvReader {
             }
             division += elements[counter++];
             char gender = elements[counter] == null ? 'N' : elements[counter].charAt(0);
-            counter++;
+            counter += 1;
             Double salary = elements[counter] == null ? 0L : Double.parseDouble(elements[counter]);
-            counter++;
+            counter += 1;
             String rating = elements[counter] == null ? "" : elements[counter];
             return new SalaryInformation(department, departmentName, division, gender, salary, rating);
         }else {
