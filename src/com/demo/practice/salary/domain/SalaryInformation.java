@@ -9,12 +9,12 @@ public class SalaryInformation {
     private String division;
     private char gender;
     private Long baseSalary;
-    private Integer grade;
+    private String grade;
 
     public SalaryInformation() {
     }
 
-    public SalaryInformation(String department, String departmentName, String division, char gender, Long baseSalary, Integer grade) {
+    public SalaryInformation(String department, String departmentName, String division, char gender, Long baseSalary, String grade) {
         this.department = department;
         this.departmentName = departmentName;
         this.division = division;
@@ -63,11 +63,11 @@ public class SalaryInformation {
         this.baseSalary = baseSalary;
     }
 
-    public Integer getGrade() {
+    public String getGrade() {
         return grade;
     }
 
-    public void setGrade(Integer grade) {
+    public void setGrade(String grade) {
         this.grade = grade;
     }
 
