@@ -33,10 +33,26 @@ public class MySalaryCsvReader implements SalaryCsvReader {
         String department = elements[0] == null ? "" : elements[0];
         String departmentName = elements[1] == null ? "" : elements[1];
         String division = elements[2] == null ? "" : elements[2];
-        char gender = elements[3] == null ? 'N' : elements[3].charAt(0);
-        Long salary = elements[4] == null ? 0L : Long.parseLong(elements[4]);
-        String rating = elements[5] == null ? "" : elements[5];
-        return new SalaryInformation(department, departmentName, division, gender, salary, rating);
+
+        if(division.startsWith("\"")) {
+            int counter = 3;
+            while(!elements[counter].endsWith("\"")) {
+                division += elements[counter];
+                counter++;
+            }
+            division += elements[counter++];
+            char gender = elements[counter] == null ? 'N' : elements[counter].charAt(0);
+            counter++;
+            Double salary = elements[counter] == null ? 0L : Double.parseDouble(elements[counter]);
+            counter++;
+            String rating = elements[counter] == null ? "" : elements[counter];
+            return new SalaryInformation(department, departmentName, division, gender, salary, rating);
+        }else {
+            char gender = elements[3] == null ? 'N' : elements[3].charAt(0);
+            Double salary = elements[4] == null ? 0L : Double.parseDouble(elements[4]);
+            String rating = elements[5] == null ? "" : elements[5];
+            return new SalaryInformation(department, departmentName, division, gender, salary, rating);
+        }
     }
 
     @Override

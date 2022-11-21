@@ -17,7 +17,7 @@ public class MySalaryService implements SalaryService {
     public String findDepartmentNameWithHighestBaseSalaryForMales() {
         return salaryListProvider.get().stream()
                 .filter(salaryInformation -> salaryInformation.getGender() == 'M')
-                .max(Comparator.comparingLong(SalaryInformation::getBaseSalary))
+                .max(Comparator.comparingDouble(SalaryInformation::getBaseSalary))
                 .orElseThrow(RuntimeException::new).getDepartmentName();
     }
 
@@ -35,35 +35,35 @@ public class MySalaryService implements SalaryService {
     @Override
     public Map<String, Double> calculateAverageSalaryForDepartments() {
         return salaryListProvider.get().stream()
-                .collect(Collectors.groupingBy(SalaryInformation::getDepartmentName, Collectors.averagingLong(SalaryInformation::getBaseSalary)));
+                .collect(Collectors.groupingBy(SalaryInformation::getDepartmentName, Collectors.averagingDouble(SalaryInformation::getBaseSalary)));
     }
 
     @Override
     public String findTheNameOfTheDepartmentThatPaysTheMostForAdministration() {
         return salaryListProvider.get().stream()
                 .filter(salaryInformation -> salaryInformation.getDivision().equals("Administration"))
-                .max(Comparator.comparingLong(SalaryInformation::getBaseSalary))
+                .max(Comparator.comparingDouble(SalaryInformation::getBaseSalary))
                 .orElseThrow(RuntimeException::new).getDepartmentName();
     }
 
     @Override
     public SalaryInformation findHighestBaseSalary() {
         return salaryListProvider.get().stream()
-                .max(Comparator.comparingLong(SalaryInformation::getBaseSalary))
+                .max(Comparator.comparingDouble(SalaryInformation::getBaseSalary))
                 .orElseThrow(RuntimeException::new);
     }
 
     @Override
     public Map<Character, Optional<SalaryInformation>> getHighestSalaryForGenders() {
         return salaryListProvider.get().stream()
-                .collect(Collectors.groupingBy(SalaryInformation::getGender, Collectors.maxBy(Comparator.comparingLong(SalaryInformation::getBaseSalary))));
+                .collect(Collectors.groupingBy(SalaryInformation::getGender, Collectors.maxBy(Comparator.comparingDouble(SalaryInformation::getBaseSalary))));
     }
 
     @Override
     public String findDivisionWithHighestSalaryInCaseOfPolice() {
         return salaryListProvider.get().stream()
                 .filter(salaryInformation -> salaryInformation.getDepartmentName().equals("Department of Police"))
-                .max(Comparator.comparingLong(SalaryInformation::getBaseSalary))
+                .max(Comparator.comparingDouble(SalaryInformation::getBaseSalary))
                 .orElseThrow(RuntimeException::new).getDivision();
     }
 

@@ -8,7 +8,6 @@ public class Main {
     public static void main(String[] args) {
         SalaryService salaryService = new MySalaryService();
         SalaryListProvider salaryListProvider = new SalaryListProvider();
-        System.out.println(salaryListProvider.get());
-        System.out.println(salaryService.calculateAverageSalaryForDepartments());
+        System.out.println(salaryService.findDepartmentNameWithHighestBaseSalaryForMales());
     }
 }
