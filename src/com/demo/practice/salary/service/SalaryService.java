@@ -10,4 +10,9 @@ public interface SalaryService {
     String findDepartmentNameWithHighestBaseSalaryForMales();
     List<SalaryInformation> findSalaryInformationForTheGivenGenderInTheGivenDepartment(String department, char gender);
     Map<String, Double> calculateAverageSalaryForDepartments();
+    String findTheNameOfTheDepartmentThatPaysTheMostForAdministration();
+    SalaryInformation findHighestBaseSalary();
+    Map<Character, Long> getHighestSalaryForGenders();
+    String findDivisionWithHighestSalaryInCaseOfPolice();
+    String findDepartmentNameWithHighestSalaryInCaseOfAdministrations();
 }
