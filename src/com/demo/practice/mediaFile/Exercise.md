@@ -16,7 +16,7 @@ MediaFile class should not be instantiated.
 
 ### VideoFile 
 Fields: \
-format: enum, possible values(MP4,FLV,MKV)
+videoFormat: enum, possible values(MP4,FLV,MKV)
 containsSubtitles: true if contains subtitles
 numberOfDubs: numbers
 length: number
@@ -31,7 +31,7 @@ The methods should come from an interface called: VideoService
 
 ### Picture
 Fields: \
-format: enum, possible values(JPEG,MPEG,PNG)\
+videoFormat: enum, possible values(JPEG,MPEG,PNG)\
 isColorized: true is the picture is colorized
 bitDepth: number
 
@@ -40,7 +40,6 @@ play
 equals and hashCode
 
 Fields should not reach from outside.\
-The methods should come from an interface called: PictureService
 
 ## Directory
 Should contain a MediaFile collection.
