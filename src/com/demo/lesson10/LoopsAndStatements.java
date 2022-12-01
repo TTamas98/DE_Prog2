@@ -16,7 +16,7 @@ public class LoopsAndStatements {
         // ELSE IF
         if(1 == 2){
             // true ( 1 = 2 )
-        } else if ( 2 == 2) {
+        } else if (2 == 2) {
             // true ( 2 = 2 )
         } else {
             // every condition before is false
